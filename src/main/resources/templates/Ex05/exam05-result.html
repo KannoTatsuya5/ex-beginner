@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    検索結果
+    <div th:each="member : ${members}">
+        <p th:text="${member.name}"></p>
+    </div>
+</body>
+</html>
