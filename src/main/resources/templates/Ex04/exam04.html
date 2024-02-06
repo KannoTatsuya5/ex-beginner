@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ユーザー登録</h2>
+    <form th:action="@{/ex04/result}" th:object="${userForm}" method="post">
+        <div th:errors="*{name}" style="color:red">名前を入力してください</div>
+        <label for="name">名前: </label>
+        <input type="text" name="name" id="name" th:field="*{name}">
+        <br>
+        <div th:errors="*{age}" style="color:red">年齢を入力してください</div>
+        <label for="age">年齢: </label>
+        <input type="text" name="age" id="age" th:field="*{age}">
+        <br>
+        <div th:errors="*{comment}" style="color:red">コメントを入力してください</div>
+        <label for="comment">コメント: </label>
+        <textarea name="comment" id="comment" cols="30" rows="10" th:field="*{comment}"></textarea>
+        <button>送信</button>
+    </form>
+</body>
+</html>
