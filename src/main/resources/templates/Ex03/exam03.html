@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/ex03/result}" method="post">
+        <label for="price1">商品1</label>
+        <input type="text" name="price1" id="price1">
+        <label for="price2">商品2</label>
+        <input type="text" name="price2" id="price2">
+        <label for="price3">商品3</label>
+        <input type="text" name="price3" id="price3">
+        <button>購入</button>
+    </form>
+</body>
+</html>
