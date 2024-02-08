@@ -17,7 +17,7 @@ import com.example.exbeginner.model.User;
 public class Ex04Controller {
     
     @GetMapping({"/index","/index/"})
-    public String index(Model model, UserForm userForm) {
+    public String index(Model model, UserForm form) {
         return "Ex04/exam04";
     }
 

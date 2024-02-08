@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>商品一覧</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>ボタン</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="item,status : ${application.items}">
+                <form th:action="@{/ex06/inCart}" method="post">
+                    <input type="hidden" th:value="${status.index}" name="index">
+                    <tr>
+                        <td th:text="${item.name}"></td>
+                        <td th:text="${item.price}"></td>
+                        <td><button>カートに入れる</button></td>
+                    </tr>
+                </form>
+            </th:block>
+        </tbody>
+    </table>
+    <h2>カート一覧</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="item,status : ${session.cartItemList}">
+                <form th:action="@{/ex06/deleteCart}" method="post">
+                    <input type="hidden" th:value="${status.index}" name="index">
+                    <tr>
+                        <td th:text="${item.name}"></td>
+                        <td th:text="${item.price}"></td>
+                        <td><button>削除する</button></td>
+                    </tr>
+                </form>
+            </th:block>
+        </tbody>
+    </table>
+    <p>合計金額</p>
+    <span th:text="${totalPrice}"></span>
+</body>
+
+</html>
