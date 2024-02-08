@@ -45,7 +45,6 @@ public class ShoppingCartController {
 		if (session.getAttribute("cartItemList") == null) {
 			session.setAttribute("cartItemList", new LinkedList<>());
 		}
-        session.getAttribute("cartItemList");
 
         // 金額を計算.
         @SuppressWarnings("unchecked") 
