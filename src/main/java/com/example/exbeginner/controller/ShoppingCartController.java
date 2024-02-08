@@ -61,7 +61,7 @@ public class ShoppingCartController {
      */
     @PostMapping({"/inCart","/inCart/"})
     public String inCart(Integer index, Model model) {
-        // インデックス番号からカートに入れた情報を取得.
+        // インデックス番号からカートに入れたい情報を取得.
         @SuppressWarnings("unchecked") 
         List<Item> items = (List<Item>) application.getAttribute("items");
         Item item = items.get(index);
